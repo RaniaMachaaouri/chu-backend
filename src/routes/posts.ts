@@ -2,8 +2,6 @@ import express from 'express';
 import controller from '../controllers/posts';
 const router = express.Router();
 
-router.get('/me', controller.getMe);
-
 router.get('/posts', controller.getPosts);
 router.get('/posts/:id', controller.getPost);
 router.put('/posts/:id', controller.updatePost);

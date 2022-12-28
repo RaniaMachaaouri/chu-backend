@@ -8,13 +8,6 @@ interface Post {
     body: String;
 }
 
-const getMe = async (req: Request, res: Response, next: NextFunction) => {
-    return res.status(200).json({
-        name: "rania",
-        version: 1
-    });
-};
-
 //getting all posts
 const getPosts = async (req: Request, res: Response, next: NextFunction) => {
     console.log("getPosts");
@@ -80,4 +73,4 @@ const addPost = async (req:Request, res: Response, next: NextFunction) => {
     });
 };
 
-export default { getPost, getPosts, updatePost, deletePost, addPost, getMe };
+export default { getPost, getPosts, updatePost, deletePost, addPost };
