@@ -26,7 +26,7 @@ const getPost = async (req: Request, res:Response, next: NextFunction) => {
     // get id
     let id: string = req.params.id;
     // get the post
-    let result: AxiosResponse = await axios.get("https://jsonplaceholder.typicode.com/posts/${id}");
+    let result: AxiosResponse = await axios.get(`https://jsonplaceholder.typicode.com/posts/${id}`);
     let post: Post = result.data;
     return res.status(200).json({
         message: post
@@ -40,7 +40,7 @@ const updatePost = async (req: Request, res:Response, next: NextFunction) => {
     let body: string = req.body.body;
 
     //update
-    let response: AxiosResponse = await axios.put("https://jsonplaceholder.typicode.com/posts/${id}",
+    let response: AxiosResponse = await axios.put(`https://jsonplaceholder.typicode.com/posts/${id}`,
     {
         ...(title && { title }),
         ...(body && { body })
